@@ -1,38 +1,143 @@
-.App {
-  text-align: center;
+* {
+    box-sizing: content-box;
+    padding: 0;
+    margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#root {
+    height: 100vh;
+    background-color: rgba(100, 111, 143, 0.556);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.chessboardDisplay {
+    display: flex;
+    width: 100%;
+    justify-content: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.chessboard {
+    width: max-content;
+    border: 3px solid gray;
 }
 
-.App-link {
-  color: #61dafb;
+.row {
+    display: grid;
+    grid-template-columns: repeat(8, 80px);
+    grid-template-rows: 80px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.row>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.row>div>img {
+    transition: 0.2s;
+    cursor: pointer;
+    height: 70%;
+    filter: drop-shadow(0px 0px 2px rgb(115, 113, 113));
+}
+
+
+
+.chessboard .row:nth-child(even)>div:nth-child(even) {
+    background-color: rgb(219, 219, 231);
+}
+
+.chessboard .row:nth-child(odd)>div:nth-child(odd) {
+    background-color: rgb(219, 219, 231);
+}
+
+.chessboard .row:nth-child(even)>div:nth-child(odd) {
+    background-color: rgb(86, 86, 110);
+}
+
+.chessboard .row:nth-child(odd)>div:nth-child(even) {
+    background-color: rgb(86, 86, 110);
+}
+
+.chessblock {
+    width: 80px;
+    height: 80px;
+}
+
+.selectedPiece>img {
+    position: relative;
+    transition: 0.2s;
+    filter: drop-shadow(2px 2px 0px rgb(97, 97, 97)) drop-shadow(0px 0px 5px rgb(116, 219, 237)) ! important;
+    scale: 1.2;
+    animation: rotatePiece 1.6s linear infinite;
+}
+
+.movementPointer {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background-color: rgba(77, 82, 91, 0.22);
+    /* background-color: red; */
+    border-radius: 50%;
+    animation: changeMovementPointerOpacity 3s linear infinite;
+}
+
+.eatenPieces {
+    min-height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.eatenPieces>div {
+    margin: 10px 10px;
+}
+
+.eatenPieces>div>img {
+    height: 50px;
+    width: 100%;
+}
+
+@keyframes changeMovementPointerOpacity {
+    0% {
+        background-color: rgba(207, 215, 230, 1);
+
+    }
+
+    25% {
+        background-color: rgb(105, 136, 157);
+    }
+
+    50% {
+        background-color: rgb(255, 255, 255);
+    }
+
+    75% {
+        background-color: rgb(105, 136, 157);
+    }
+
+    100% {
+        background-color: rgba(207, 215, 230, 1);
+    }
+}
+
+@keyframes rotatePiece {
+    0% {
+        rotate: 0deg;
+    }
+
+    25% {
+        rotate: 5deg;
+    }
+
+    50% {
+        rotate: 0deg;
+    }
+
+    75% {
+        rotate: -5deg;
+    }
+
+    100% {
+        rotate: 0deg;
+    }
 }
