@@ -7,8 +7,6 @@ export default class Rook {
     movementOptions(chessboard, selectedPiece) {
         const movementOptions = []
         for (let ri = selectedPiece.rowIndex + 1; ri < 8; ri++) {
-            console.log("EXE5")
-            console.log(chessboard[ri][selectedPiece.blockIndex])
             if (!chessboard[ri][selectedPiece.blockIndex]?.block) break
             if (chessboard[ri][selectedPiece.blockIndex]?.piece && chessboard[ri][selectedPiece.blockIndex]?.piece?.color === this.color) {
                 break
@@ -20,8 +18,6 @@ export default class Rook {
             }
         }
         for (let ri = selectedPiece.rowIndex - 1; ri >= 0; ri--) {
-            console.log("EXE6")
-            console.log(chessboard[ri][selectedPiece.blockIndex])
             if (!chessboard[ri][selectedPiece.blockIndex]?.block) break
             if (chessboard[ri][selectedPiece.blockIndex]?.piece && chessboard[ri][selectedPiece.blockIndex]?.piece?.color === this.color) {
                 break
@@ -33,8 +29,6 @@ export default class Rook {
             }
         }
         for (let qbi = selectedPiece.blockIndex - 1; qbi >= 0; qbi--) {
-            console.log("EXE7")
-            console.log(chessboard[selectedPiece.rowIndex][qbi])
             if (!chessboard[selectedPiece.rowIndex][qbi]?.block) break
             if (chessboard[selectedPiece.rowIndex][qbi]?.piece && chessboard[selectedPiece.rowIndex][qbi]?.piece?.color === this.color) {
                 break
@@ -46,8 +40,6 @@ export default class Rook {
             }
         }
         for (let qbi = selectedPiece.blockIndex + 1; qbi < 8; qbi++) {
-            console.log("EXE8")
-            console.log(chessboard[selectedPiece.rowIndex][qbi])
             if (!chessboard[selectedPiece.rowIndex][qbi]?.block) break
             if (chessboard[selectedPiece.rowIndex][qbi]?.piece && chessboard[selectedPiece.rowIndex][qbi]?.piece?.color === this.color) {
                 break

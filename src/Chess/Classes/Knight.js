@@ -6,7 +6,6 @@ export default class Knight {
     }
     movementOptions(chessboard, selectedPiece) {
         const movementOptions = []
-        console.log(chessboard)
         const directions = [
             [selectedPiece.rowIndex - 2, selectedPiece.blockIndex - 1],
             [selectedPiece.rowIndex - 2, selectedPiece.blockIndex + 1],

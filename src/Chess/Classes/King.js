@@ -30,10 +30,8 @@ export default class King {
 
                 }
             }
-            console.log(bi)
         }
 
-        console.log(movementOptions)
         return movementOptions
     }
 }

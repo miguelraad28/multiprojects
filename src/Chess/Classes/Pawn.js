@@ -15,14 +15,11 @@ export default class Pawn {
                 movementOptions.push(chessboard[selectedPiece.rowIndex - 1][selectedPiece.blockIndex + 1].block)
             }
             if (selectedPiece.rowIndex === 6) {
-                console.log("Peon en salida")
                 for (let ri = selectedPiece.rowIndex - 1; ri >= selectedPiece.rowIndex - 2; ri--) {
                     if (chessboard[ri][selectedPiece.blockIndex]?.piece) break
                     movementOptions.push(chessboard[ri][selectedPiece.blockIndex].block)
-                    console.log(chessboard[ri][selectedPiece.blockIndex])
                 }
             } else {
-                console.log("Peon no esta en salida")
                 if (!chessboard[selectedPiece.rowIndex - 1][selectedPiece.blockIndex]?.piece) {
                     movementOptions.push(chessboard[selectedPiece.rowIndex - 1][selectedPiece.blockIndex].block)
                 }
@@ -36,14 +33,11 @@ export default class Pawn {
                 movementOptions.push(chessboard[selectedPiece.rowIndex + 1][selectedPiece.blockIndex + 1].block)
             }
             if (selectedPiece.rowIndex === 1) {
-                console.log("Peon en salida")
                 for (let ri = selectedPiece.rowIndex + 1; ri <= selectedPiece.rowIndex + 2; ri++) {
                     if (chessboard[ri][selectedPiece.blockIndex]?.piece) break
                     movementOptions.push(chessboard[ri][selectedPiece.blockIndex].block)
-                    console.log(chessboard[ri][selectedPiece.blockIndex])
                 }
             } else {
-                console.log("Peon no esta en salida")
                 if (!chessboard[selectedPiece.rowIndex + 1][selectedPiece.blockIndex]?.piece) {
                     movementOptions.push(chessboard[selectedPiece.rowIndex + 1][selectedPiece.blockIndex].block)
                 }
